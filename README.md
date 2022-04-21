@@ -9,7 +9,7 @@ Deploying Lambda functions using Docker has a number of benefits
 - It’s easy!
 
 
-[The Dev.to article can be found her](https://dev.to/wesleycheek/deploy-a-docker-built-lambda-function-with-aws-cdk-fio)
+[The Dev.to article can be found here](https://dev.to/wesleycheek/deploy-a-docker-built-lambda-function-with-aws-cdk-fio)
 
 ## If starting from scratch
 
