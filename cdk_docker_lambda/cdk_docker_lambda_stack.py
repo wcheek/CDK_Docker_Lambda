@@ -7,6 +7,8 @@ class CdkDockerLambdaStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
+        self.build_lambda_func()
+
     def build_lambda_func(self):
         self.prediction_lambda = _lambda.DockerImageFunction(
             scope=self,
