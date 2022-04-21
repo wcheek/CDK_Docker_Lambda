@@ -5,6 +5,8 @@ LABEL maintainer="Wesley Cheek"
 RUN yum update -y && \
     yum install -y python3 python3-dev python3-pip gcc && \
     rm -Rf /var/cache/yum
+# Be sure to copy over the function itself!
+COPY example_docker_lambda.py ./
 # Copies requirements.txt file into the container
 COPY requirements.txt ./
 # Installs dependencies found in your requirements.txt file
