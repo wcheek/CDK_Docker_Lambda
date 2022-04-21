@@ -16,7 +16,7 @@ class CdkDockerLambdaStack(Stack):
             # Use aws_cdk.aws_lambda.DockerImageCode.from_image_asset to build
             # a docker image on deployment
             code=_lambda.DockerImageCode.from_image_asset(
-                # Directory relative to the stack which contains Dockerfile
+                # Directory relative to the stack which contains a Dockerfile
                 directory="ExampleDockerLambda"
             ),
         )
