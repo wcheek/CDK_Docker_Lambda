@@ -53,8 +53,9 @@ class CdkDockerLambdaStack(Stack):
             # Use aws_cdk.aws_lambda.DockerImageCode.from_image_asset to build
             # a docker image on deployment
             code=_lambda.DockerImageCode.from_image_asset(
-                # Directory relative to the stack which contains a Dockerfile
-                directory="ExampleDockerLambda"
+                # Directory relative to where you execute cdk deploy
+                # contains a Dockerfile
+                directory="cdk_docker_lambda/ExampleDockerLambda"
             ),
         )
 
@@ -100,5 +101,7 @@ def handler(event, context):
 
 ```
 
+Now `cdk deploy`. `AWS CDK` will build your new Lambda function using `Docker` and then push it for you to the `ECR` repository that was originally created for you by running `cdk bootstrap` during the CDK setup. How convenient. 
 
+After the image is built and pushed, CDK will deploy the necessary infrastructure. You can navigate to the `AWS CloudFormation` console to view the deployment. It should only take a couple minutes.
 
