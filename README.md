@@ -6,7 +6,10 @@ Deploying Lambda functions using Docker has a number of benefits
 - Package all necessary libraries into a single Docker image
 - Bypass AWS Lambda's size constraint of 512 mb. Docker images stored on AWS ECR have a maximum size of 10 gb.
 
--   It’s easy!
+- It’s easy!
+
+
+[The Dev.to article can be found her](https://dev.to/wesleycheek/deploy-a-docker-built-lambda-function-with-aws-cdk-fio)
 
 ## If starting from scratch
 
