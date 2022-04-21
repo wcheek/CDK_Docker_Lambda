@@ -63,11 +63,11 @@ class CdkDockerLambdaStack(Stack):
 
 ## Lambda function
 
-Create a new directory in `cdk_docker_lambda` called `ExampleDockerLambda`. Here we are going to put a `Dockerfile`, `requirements.txt` which holds our function’s dependencies, and the lambda function itself, `example_docker_lambda.py`:
+Create a new directory in `cdk_docker_lambda` called `ExampleDockerLambda`. Here we are going to put a `Dockerfile`, `requirements.txt` which holds our function’s dependencies, and the lambda function itself, `example_docker_lambda.py`
+
+### cdk_docker_lambda/ExampleDockerLambda/Dockerfile
 
 ```dockerfile
-# cdk_docker_lambda/ExampleDockerLambda/Dockerfile
-
 FROM amazon/aws-lambda-python:latest
 
 LABEL maintainer="Wesley Cheek"
@@ -86,14 +86,15 @@ RUN pip install -r requirements.txt
 CMD ["example_docker_lambda.handler"]
 ```
 
-```
-# cdk_docker_lambda/ExampleDockerLambda/requirements.txt
+### cdk_docker_lambda/ExampleDockerLambda/requirements.txt
 
+```
 requests
 ```
 
+### cdk_docker_lambda/ExampleDockerLambda/example_docker_lambda.py
+
 ```python
-# cdk_docker_lambda/ExampleDockerLambda/example_docker_lambda.py
 # Very simple
 
 import requests
@@ -110,3 +111,11 @@ After the image is built and pushed, CDK will deploy the necessary infrastructur
 Once finished, you will find your beautful `Docker` deployed Lambda function on the Lambda console
 
 ![lambda func](D:\Projects\Notes\My Articles\3_CDK_Docker_Lambda\Assets\lambda func.png)
+
+### Test your Lambda function
+
+We can use any kind of event since the function always just returns a string.
+
+![image-20220421105909196](D:\Projects\Notes\My Articles\3_CDK_Docker_Lambda\Assets\image-20220421105909196.png)
+
+Have fun easily deploying any sized Lambda you’d like using `AWS CDK` and `Docker`!
